@@ -13,9 +13,6 @@ Pod::Spec.new do |s|
   s.summary          = "A lightweight Library Acknowledgement viewer for iOS apps."
   s.description      = <<-DESC
                        Acknowledger turns the generated acknowledgements file from Cocoapods into something more useful.
-
-                       * Markdown format.
-                       * Don't worry about the indent, we strip it!
                        DESC
   s.homepage         = "https://github.com/nkirby/Acknowledger"
   s.license          = 'MIT'
