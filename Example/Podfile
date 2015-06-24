@@ -1,0 +1,12 @@
+source 'https://github.com/CocoaPods/Specs.git'
+use_frameworks!
+
+target 'Acknowledger_Example', :exclusive => true do
+  pod "Acknowledger", :path => "../"
+end
+
+target 'Acknowledger_Tests', :exclusive => true do
+  pod "Acknowledger", :path => "../"
+
+  
+end
