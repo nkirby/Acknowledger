@@ -1,0 +1,14 @@
+PODS:
+  - Acknowledger (0.1.0)
+
+DEPENDENCIES:
+  - Acknowledger (from `../`)
+
+EXTERNAL SOURCES:
+  Acknowledger:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Acknowledger: 882ab13cc4c070bfd3b9419aaf3633c07f2b8e64
+
+COCOAPODS: 0.37.2

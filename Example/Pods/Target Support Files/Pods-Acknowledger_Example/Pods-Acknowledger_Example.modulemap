@@ -1,0 +1,6 @@
+framework module Pods_Acknowledger_Example {
+  umbrella header "Pods-Acknowledger_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
