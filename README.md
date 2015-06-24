@@ -22,7 +22,7 @@ pod "Acknowledger"
 
 ## Author
 
-Nathaniel Kirby, nate@projectspong.com
+Nathaniel Kirby, nkirby.ps@gmail.com
 
 ## License
 

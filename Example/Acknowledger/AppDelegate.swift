@@ -1,12 +1,11 @@
-//
-//  AppDelegate.swift
-//  Acknowledger
-//
-//  Created by Nathaniel Kirby on 06/23/2015.
-//  Copyright (c) 06/23/2015 Nathaniel Kirby. All rights reserved.
-//
+// =======================================================
+// Acknowledger
+// Nathaniel Kirby
+// https://github.com/nkirby/Acknowledger.git
+// =======================================================
 
 import UIKit
+import Acknowledger
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +15,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        do {
+            let parser = try Acknowledger(plistFilename: "Pods-acknowledgements.plist")
+            print(parser.libraryNames())
+        } catch AcknowledgerParserError.InvalidPlist {
+            print("invalid plist")
+        } catch AcknowledgerParserError.InvalidPlistFilename {
+            print("invalid plist filename")
+        } catch {
+            
+        }
+        
         return true
     }
 
