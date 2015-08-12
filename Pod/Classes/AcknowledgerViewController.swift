@@ -231,7 +231,7 @@ Creates an AcknowledgerViewController by first attempting to create an Acknowled
             return
         }
         
-        self.libraries = acknowledger.allLibraries()
+        self.libraries = acknowledger.sortedLibraries()
     }
 
     public override func viewWillAppear(animated: Bool) {
