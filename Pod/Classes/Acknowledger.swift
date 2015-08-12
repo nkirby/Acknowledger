@@ -60,6 +60,15 @@ Creates a Library instance. It maps:
         self.license = dict["FooterText"] ?? ""
         self.name = dict["Title"] ?? ""
     }
+    
+/**
+Creates a Library instance from a library name and a license text
+*/
+    
+    public init(name: String, license: String) {
+        self.license = license
+        self.name = name
+    }
 }
 
 // =======================================================
@@ -89,6 +98,7 @@ Throws one of three errors:
 */
     
     public init(plistFilename: String) throws {
+        // NK: This is dirty.
         let filename = plistFilename.stringByReplacingOccurrencesOfString(".plist", withString: "", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
         
         guard let path = NSBundle.mainBundle().pathForResource(filename, ofType: "plist") else {
@@ -138,14 +148,25 @@ Throws the following error:
         
         self.libraries = libraries
     }
+
+// =======================================================
+// MARK: - Library Adding
+    
+/**
+Allows an already created Library struct to be added to an Acknowledger instance
+*/
+    
+    public func addLibrary(library: Library) {
+        self.libraries.append(library)
+    }
     
 // =======================================================
 // MARK: - Retrieval
  
 /**
-Returns an array of all libraries loaded at init
+Returns an array of all libraries
 
-:returns: an array of Library structs containing the parsed contents passed to init
+:returns: an array of Library structs containing the parsed contents
 */
     
     public func allLibraries() -> [Library] {
@@ -153,7 +174,17 @@ Returns an array of all libraries loaded at init
     }
     
 /**
-Returns an array of the names of all libraries loaded at init
+Returns a sorted array of all libraries
+
+:returns: an array of Library structs containing the parsed contents
+*/
+
+    public func sortedLibraries() -> [Library] {
+        return self.libraries.sort { $0.name < $1.name }
+    }
+    
+/**
+Returns an array of the names of all libraries
 
 :returns: an array of library names
 */

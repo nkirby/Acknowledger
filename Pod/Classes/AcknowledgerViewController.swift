@@ -164,7 +164,7 @@ The accessoryView for each cell in the library list. Default is nil
         super.init(style: style)
     }
     
-    public required init(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
@@ -231,7 +231,7 @@ Creates an AcknowledgerViewController by first attempting to create an Acknowled
             return
         }
         
-        self.libraries = acknowledger.allLibraries()
+        self.libraries = acknowledger.sortedLibraries()
     }
 
     public override func viewWillAppear(animated: Bool) {

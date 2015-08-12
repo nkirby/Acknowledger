@@ -25,7 +25,7 @@ public class AcknowledgerLicenseViewController: UIViewController {
         super.init(nibName: nil, bundle: nil)
     }
     
-    public required init(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
