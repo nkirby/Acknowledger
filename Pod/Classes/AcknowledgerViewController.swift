@@ -164,7 +164,7 @@ The accessoryView for each cell in the library list. Default is nil
         super.init(style: style)
     }
     
-    public required init(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
